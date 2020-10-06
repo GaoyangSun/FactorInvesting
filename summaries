@@ -1,0 +1,19 @@
+Chapter 1  因子投资基础
+1. 因子模型研究资产的预期收益和beta_i的关系，即资产收益率在截面上的差异，因此多因子模型是关于均值的模型（model of mean）
+2. 在时序角度下，两个重要的问题是方差模型（model of variance）和因子择时
+3. excess return_t = alpha + beta*lambda_t + epsilon_t
+   with E[epsilon_t] = 0 and cov(lambda_t, epsilon_t)
+   -> sigma_portfolio = beta*sigma_beta*beta' + sigma_epsilon
+   多因子模型代表资产超额收益的某种结构，因此一个好的模型应该尽可能解释不同资产收益率间的共性运动 -> beta*sigma_beta*beta' 应该尽可能接近sigma_portfolio的非对角线元素
+4. data snooping -> 学者们查看数据后才提出假设，进行统计检验，以寻找显著超额因子
+
+Chapter 2  因子投资方法论
+1. 因子模拟投资组合（factor mimicing portfolio） -> 使用股票资产、围绕某目标因子构建的投资组合
+   [1] 仅在目标因子上有暴露，在其他因子暴露为0
+   [2] 投资组合的特异性风险（unsystematic risk）最小
+2. 统计检验 -> 因子收益率能否在给定的显著性水平下拒绝原假设（收益率=0）
+   lambda^ = (1/T) sum over lambda_t
+   standardError(lambda^) = std(lambda_t)/sqrt(T)
+   t_stat = lambda^/standardError(lambda^)
+3. 排序法 -> 因子模拟组合应该在其他因子上没有暴露，但排序法难以控制（有些因子有“市值味儿”），因此通常使用多重排序
+   note：控制变量因子一组内的所有股票能否被算作[控制]? -> 或许先对市值回归，再进行分组比较好？
